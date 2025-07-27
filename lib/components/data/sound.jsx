@@ -76,7 +76,10 @@ export const Widget = React.memo(() => {
 
   // Update the sound settings when dragging ends.
   React.useEffect(() => {
-    if (!dragging) setSound(volume);
+    if (!dragging) {
+      setSound(volume);
+      setState({ volume, muted: false });
+    }
   }, [dragging, volume]);
 
   // Update the volume state when the fetched volume changes.
@@ -109,6 +112,17 @@ export const Widget = React.memo(() => {
   const onMouseDown = () => setDragging(true);
   const onMouseUp = () => setDragging(false);
 
+  const onClick = (e) => {
+    Uebersicht.run(
+      `osascript -e 'set volume output muted (not output muted of (get volume settings))'`,
+    );
+
+    setState((prevState) => ({
+      ...prevState,
+      muted: prevState.muted === "true" ? "false" : "true",
+    }));
+  };
+
   const formattedVolume = `${volume.toString().padStart(2, "0")}%`;
 
   const classes = Utils.classNames("sound", {
@@ -117,7 +131,7 @@ export const Widget = React.memo(() => {
 
   return (
     <DataWidget.Widget classes={classes} disableSlider>
-      <div className="sound__display">
+      <div className="sound__display" onDoubleClick={onClick}>
         {showIcon && (
           <SuspenseIcon>
             <Icon />

@@ -119,7 +119,7 @@ const UserWidget = React.memo(({ index, widget }) => {
   const style = settings.global.noColorInData
     ? undefined
     : {
-        [property]: isCustomColor ? backgroundColor : `var(${backgroundColor})`,
+        [property]: isCustomColor ? backgroundColor : `var(--minor)`,
       };
 
   if (loading) return <DataWidgetLoader.Widget style={style} />;

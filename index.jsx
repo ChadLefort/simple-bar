@@ -37,6 +37,7 @@ import * as SideIcon from "./lib/components/side-icon.jsx";
 import * as Missives from "./lib/components/missives/missives.jsx";
 import * as Utils from "./lib/utils";
 import * as Settings from "./lib/settings";
+import * as Brightness from "./lib/components/data/brightness.jsx";
 
 // Destructure React from Uebersicht in order to make eslint catch hook rules for example
 const { React } = Uebersicht;
@@ -145,6 +146,7 @@ Utils.injectStyles("simple-bar-index-styles", [
   settings.customStyles.styles,
   SideIcon.styles,
   Missives.styles,
+  Brightness.styles,
 ]);
 
 // Render function to display the bar
@@ -246,23 +248,24 @@ function render({ output, error }) {
         </React.Suspense>
         <Settings.Wrapper />
         <div className="simple-bar__data">
+          <YouTubeMusic.Widget />
+          <Weather.Widget />
           <UserWidgets />
-          <Zoom.Widget />
+          <Brightness.Widget />
           <BrowserTrack.Widget />
           <Spotify.Widget />
-          <YouTubeMusic.Widget />
           <Crypto.Widget />
           <Stock.Widget />
           <Music.Widget />
           <Mpd.Widget />
-          <Weather.Widget />
           <Netstats.Widget />
           <Cpu.Widget />
           <Gpu.Widget />
           <Memory.Widget />
-          <Battery.Widget />
+          <Zoom.Widget />
           <Mic.Widget />
           <Sound.Widget />
+          <Battery.Widget />
           <ViscosityVPN.Widget />
           <Wifi.Widget />
           <Keyboard.Widget />

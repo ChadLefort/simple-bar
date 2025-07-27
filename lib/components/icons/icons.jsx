@@ -86,6 +86,7 @@ export const Copilot = React.lazy(() => import("./library/copilot.jsx"));
 export const CPU = React.lazy(() => import("./library/cp-u.jsx"));
 export const Cursor = React.lazy(() => import("./library/cursor.jsx"));
 export const DataGrip = React.lazy(() => import("./library/data-grip.jsx"));
+export const DBeaver = React.lazy(() => import("./library/dbeaver.jsx"));
 export const Date = React.lazy(() => import("./library/date.jsx"));
 export const Deezer = React.lazy(() => import("./library/deezer.jsx"));
 export const Desktop = React.lazy(() => import("./library/desktop.jsx"));
@@ -129,6 +130,7 @@ export const GoogleChrome = React.lazy(
 export const GnuCash = React.lazy(() => import("./library/gnu-cash.jsx"));
 export const GoLand = React.lazy(() => import("./library/go-land.jsx"));
 export const Grammarly = React.lazy(() => import("./library/grammarly.jsx"));
+export const GitKraken = React.lazy(() => import("./library/gitkraken.jsx"));
 export const HomeAssistant = React.lazy(
   () => import("./library/home-assistant.jsx"),
 );

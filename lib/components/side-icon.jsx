@@ -21,9 +21,19 @@ export function Component() {
   // If sideDecoration is disabled, return null
   if (!sideDecoration) return null;
 
+  const handleSleep = React.useCallback(async () => {
+    try {
+      await Uebersicht.run(
+        'osascript -e "tell application \\"System Events\\" to sleep"',
+      );
+    } catch (error) {
+      console.error("Error putting the system to sleep:", error);
+    }
+  }, []);
+
   // Render the side icon component
   return (
-    <div className="side-icon">
+    <div className="side-icon" onDoubleClick={handleSleep}>
       <SuspenseIcon>
         <Icons.Apple className="side-icon__svg" />
       </SuspenseIcon>

@@ -221,6 +221,7 @@ export const QuteBrowser = React.lazy(
 );
 export const Radar = React.lazy(() => import("./library/radar.jsx"));
 export const Rain = React.lazy(() => import("./library/rain.jsx"));
+export const Raycast = React.lazy(() => import("./library/raycast.jsx"));
 export const Ram = React.lazy(() => import("./library/ram.jsx"));
 export const Redis = React.lazy(() => import("./library/redis.jsx"));
 export const Reeder5 = React.lazy(() => import("./library/reeder5.jsx"));

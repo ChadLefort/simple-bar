@@ -62,7 +62,7 @@ export const Widget = React.memo(() => {
 
     try {
       brightnessOutput = await Uebersicht.run(
-        `betterdisplaycli get --brightness`,
+        `/opt/homebrew/bin/betterdisplaycli get --brightness`,
       );
     } catch {
       // Final fallback: default brightness
@@ -173,5 +173,5 @@ function getIcon(brightness) {
 function setBrightnessLevel(brightness, foo) {
   if (brightness === undefined) return;
 
-  Uebersicht.run(`betterdisplaycli set --brightness=${brightness}`);
+  Uebersicht.run(`/opt/homebrew/bin/betterdisplaycli set --brightness=${brightness}`);
 }

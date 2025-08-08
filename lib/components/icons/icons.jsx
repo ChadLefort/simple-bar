@@ -73,6 +73,7 @@ export const ChevronRight = React.lazy(
 );
 export const ChevronTop = React.lazy(() => import("./library/chevron-top.jsx"));
 export const CheckBox = React.lazy(() => import("./library/check-box.jsx"));
+export const Claude = React.lazy(() => import("./library/claude.jsx"));
 export const ClickUp = React.lazy(() => import("./library/click-up.jsx"));
 export const Clock = React.lazy(() => import("./library/clock.jsx"));
 export const Close = React.lazy(() => import("./library/close.jsx"));
